@@ -16,22 +16,41 @@ namespace GuessingGame
 
             do
             {
-                if (ourNumber != 7)
-                {
-                    Console.WriteLine("Try Again");
-                    Console.Write("Please enter your number: ");
-                    ourNumber = Convert.ToInt32(Console.ReadLine());
-
-                    Console.WriteLine("Try Again");
-                    Console.Write("Please enter your number: ");
-                    ourNumber = Convert.ToInt32(Console.ReadLine());
-                    break;
-                }
-
-                else
+                if (ourNumber == 7)
                 {
                     Console.WriteLine("You Win!");
                     break;
+                }
+
+                else if (ourNumber == 0)
+                {
+                    Console.Write("Please enter your number that's not 0:");
+                    int myNewNumber = Convert.ToInt32(Console.ReadLine());
+                    if (myNewNumber == 7)
+                    {
+                        Console.WriteLine("You win!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("You Lose!");
+                    }
+                    ourNumber = Convert.ToInt32(Console.ReadLine());
+                   
+                    break;
+                }
+
+
+                else
+                {
+                    Console.WriteLine("Try Again");
+                    Console.Write("Please enter your number: ");
+                    ourNumber = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Try Again");
+                    Console.Write("Please enter your number: ");
+                    ourNumber = Convert.ToInt32(Console.ReadLine());
+                    break;
+                    
                 }
             }
             while (true);
