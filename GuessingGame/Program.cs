@@ -12,11 +12,15 @@ namespace GuessingGame
 
             // When the user guesses 7, the game announces they have won. All other numbers lose.
 
-            int ourNumber = Convert.ToInt32(Console.ReadLine());
+            Random random = new Random();
+
+            int randomNumber = random.Next(1, 5);
+            
+            int ourNumber = (Convert.ToInt32(Console.ReadLine()));
 
             do
             {
-                if (ourNumber == 7)
+                if (ourNumber == randomNumber)
                 {
                     Console.WriteLine("You Win!");
                     break;
@@ -26,7 +30,7 @@ namespace GuessingGame
                 {
                     Console.Write("Please enter your number that's not 0:");
                     int myNewNumber = Convert.ToInt32(Console.ReadLine());
-                    if (myNewNumber == 7)
+                    if (myNewNumber == randomNumber)
                     {
                         Console.WriteLine("You win!");
                     }
@@ -53,7 +57,7 @@ namespace GuessingGame
                     Console.Write("Please enter your number: ");
                     ourNumber = Convert.ToInt32(Console.ReadLine());
 
-                    if (ourNumber == 7)
+                    if (ourNumber == randomNumber)
                     {
                         Console.WriteLine("You win!");
                         break;
@@ -63,7 +67,7 @@ namespace GuessingGame
                     Console.Write("Please enter your number: ");
                     ourNumber = Convert.ToInt32(Console.ReadLine());
 
-                    if (ourNumber == 7)
+                    if (ourNumber == randomNumber)
                     {
                         Console.WriteLine("You win!");
                         break;
