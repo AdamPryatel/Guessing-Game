@@ -30,6 +30,10 @@ namespace GuessingGame
                     {
                         Console.WriteLine("You win!");
                     }
+                    else if (myNewNumber == -1)
+                    {
+                        break;
+                    }
                     else
                     {
                         Console.WriteLine("You Lose!");
@@ -38,7 +42,10 @@ namespace GuessingGame
                    
                     break;
                 }
-
+                else if (ourNumber == -1)
+                {
+                    break;
+                }
 
                 else
                 {
@@ -46,11 +53,26 @@ namespace GuessingGame
                     Console.Write("Please enter your number: ");
                     ourNumber = Convert.ToInt32(Console.ReadLine());
 
+                    if (ourNumber == 7)
+                    {
+                        Console.WriteLine("You win!");
+                        break;
+                    }
+                    
                     Console.WriteLine("Try Again");
                     Console.Write("Please enter your number: ");
                     ourNumber = Convert.ToInt32(Console.ReadLine());
+
+                    if (ourNumber == 7)
+                    {
+                        Console.WriteLine("You win!");
+                        break;
+                    }
+
                     break;
+
                     
+
                 }
             }
             while (true);
