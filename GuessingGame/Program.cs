@@ -14,7 +14,7 @@ namespace GuessingGame
 
             Random random = new Random();
 
-            int randomNumber = random.Next(1, 5);
+            int randomNumber = random.Next(1, 5);                       // Change this range
             
             int ourNumber = (Convert.ToInt32(Console.ReadLine()));
 
@@ -28,7 +28,7 @@ namespace GuessingGame
 
                 else if (ourNumber == 0)
                 {
-                    Console.Write("Please enter your number that's not 0:");
+                    Console.Write("Your number is higher than 0:");
                     int myNewNumber = Convert.ToInt32(Console.ReadLine());
                     if (myNewNumber == randomNumber)
                     {
@@ -43,7 +43,7 @@ namespace GuessingGame
                         Console.WriteLine("You Lose!");
                     }
                     ourNumber = Convert.ToInt32(Console.ReadLine());
-                   
+
                     break;
                 }
                 else if (ourNumber == -1)
@@ -53,7 +53,16 @@ namespace GuessingGame
 
                 else
                 {
-                    Console.WriteLine("Try Again");
+                    if (ourNumber > randomNumber) 
+                    {
+                        Console.WriteLine("Your number is lower than " + ourNumber + ". Try Again");
+                    }
+                    else if (ourNumber < randomNumber)
+                    {
+                        Console.WriteLine("Your number is higher than " + ourNumber + ". Try Again");
+                    }
+                }
+
                     Console.Write("Please enter your number: ");
                     ourNumber = Convert.ToInt32(Console.ReadLine());
 
@@ -62,9 +71,17 @@ namespace GuessingGame
                         Console.WriteLine("You win!");
                         break;
                     }
-                    
-                    Console.WriteLine("Try Again");
-                    Console.Write("Please enter your number: ");
+
+                if (ourNumber > randomNumber)
+                {
+                    Console.WriteLine("Your number is lower than " + ourNumber + ". Try Again");
+                }
+                else if (ourNumber < randomNumber)
+                {
+                    Console.WriteLine("Your number is higher than " + ourNumber + ". Try Again");
+                }
+
+                Console.Write("Please enter your number: ");
                     ourNumber = Convert.ToInt32(Console.ReadLine());
 
                     if (ourNumber == randomNumber)
@@ -77,7 +94,7 @@ namespace GuessingGame
 
                     
 
-                }
+                
             }
             while (true);
 
