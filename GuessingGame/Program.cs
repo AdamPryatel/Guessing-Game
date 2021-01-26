@@ -8,6 +8,7 @@ namespace GuessingGame
         {
             Console.WriteLine("Welcome to Guessing Game!");
             Console.WriteLine("Hi");
+            Console.WriteLine("Hello");
         }
     }
 }
