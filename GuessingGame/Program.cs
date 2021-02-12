@@ -14,7 +14,7 @@ namespace GuessingGame
 
             Random random = new Random();
 
-            int randomNumber = random.Next(1, 5);                       // Change this range
+            int randomNumber = random.Next(1, 5);                       
             
             int ourNumber = (Convert.ToInt32(Console.ReadLine()));
 
